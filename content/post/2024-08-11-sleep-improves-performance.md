@@ -10,7 +10,7 @@ image:     "/img/docker.jpg"
 published: true
 showtoc: true 
 tags:
-    - Self-Discipline
+    - Self-improvement
   
 URL: "/2024/08/14/sleep/"
 categories: [ Notes ]
