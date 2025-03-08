@@ -19,6 +19,27 @@ password_protected: false
 password: "407704"
 ---
 
+## Paragraph
+
+
+
+### state your aim before giving the reasons for it  
+
+
+
+When you explain a new game to someone, do you tell them the rules/strategies and then the objective, or vice versa? Which sounds more logical to you: S1 or S2?  
+
+> S1. You need to develop a strategy, make decisions as to whether to collaborate or not with the other players, also keep an eye on the progress of the other players, and finally make the most money in order to win the game.  
+
+> S2. In order to win the game you need to make the most money. To do this, you need to develop ...
+
+### Don’t separate the verb from its direct object
+
+> A: We can separate, with this tool, P and Q. 
+We can separate P and Q with this tool.  
+
+> B: We can associate with these values a high cost. 
+We can associate a high cost with these values.
 
 
 最快速的方式就是在每句话的前七个或八个词 下面划线。用动词来表示动作，但是他们更希望用人物做主语。当我们没有很好的理由说明为什么不用人物 做主语，或者更糟的是把主语完全省略时，我们就为读者制造了麻烦。我写论文很多时候就是不突出主语，造成很难阅读，在不来梅有一次会议，教授就问我为我的论文，谁获益。Schönberger也说过，我的论文很难读。
