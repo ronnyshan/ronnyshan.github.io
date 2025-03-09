@@ -14,7 +14,7 @@ tags:
   
 URL: "/2024/08/14/sleep/"
 categories: [ Notes ]
-password_protected: false
+password_protected: true
 password: "407704"
 ---
 
