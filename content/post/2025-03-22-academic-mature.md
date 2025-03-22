@@ -2,8 +2,8 @@
 layout:     post
 title:      "Academic Leadership"
 subtitle:   ""
-description: "Academic Leadership"
-excerpt: "Academic Leadership"
+description: "AcademicLeadership"
+excerpt: "Academic_Leadership"
 date:       2025-03-22 10:00:00
 author:     "Shan"
 image:     "/img/docker.jpg"
@@ -11,7 +11,7 @@ published: true
 showtoc: true 
 tags:
     - Self-improvement
-URL: "/2025/03/22/Academic Leadership/"
+URL: "/2025/03/22/Academic_Leadership/"
 categories: [ Notes ]
 password_protected: false
 password: "sj"
