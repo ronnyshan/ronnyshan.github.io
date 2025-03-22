@@ -21,13 +21,44 @@ password: "407704"
 
 ## Paragraph
 
+writing needs concrete
 
+如果修改的篇幅较长，首先查看那些难写的段落，因为你不能完全理解自己的观点。如果我们不确定自己 想要表达什么，或者不知道怎么表达，我们更容易写得糟糕
+
+
+段落里除了有逻辑论证，还需要有分析。
+
+
+Write with confidence
+“And then there’s compulsive hedging. Many writers cushion their prose with wads of fluff that imply that they are not willing to stand behind what they are saying, including almost, apparently, comparatively, fairly, in part, nearly, partially, predominately, presumably, rather, relatively, seemingly, so to speak, somewhat, sort of, to a certain degree, to some extent...” -Steven Pinker
+
+Don’t be afraid of passive voice
+
+将复杂的想法分解成更小的部分。避免使用行业术语、未定义的缩写词和无法解释的假设。尽可能使用类比和隐喻，以听众能理解的方式解释主题。
+
+I often get the chance to read and edit the work of other writers. One of the most common mistakes I see in beginners’ work is that they try to do too much in a single article. Rather than saying ONE thing (and saying it well), they say 100 things (and say them poorly).
+
+写作是一个混乱的过程。你的工作就是弄脏你的双手——上面布满了放错位置的修饰语和令人烦恼的切线——然后清理这些混乱，让读者永远猜不到它在那里。
+
+把写作想象成举办家庭聚会。你希望你的创作过程狂野而富有创造力。制造混乱。玩得开心。在创作过程中你需要一点疯狂。但聚会结束后，你必须清理你制造的混乱。这就是所谓的编辑。在编辑过程中，你要扔掉所有不属于这里的东西。把离题的从沙发上踢掉。扔掉垃圾语法。整理好以确保一切都在正确的位置。
+
+清理过程（如果做得好）需要大量工作。但它总是值得的。
+
+
+## Paragraph
+Results do not speak for themselves! You can describe your results in numbers or percentages but those numbers or percentages are already visible to your reader in the graph or table; your reader needs to know what the numbers or quantities mean in order to understand them.
+
+## Discussion
+
+In the Introduction, you wrote about the work of other researchers, creating a kind of research map for your readers so that they could see what type of work existed in this field; in the Discussion/Conclusion you locate your study in relation to that research map. You then went on in the Introduction to locate a gap in the research or describe a problem associated with existing research; in the Discussion/Conclusion, you are expected to say to what extent you have responded to that gap or solved that problem.
 
 ### state your aim before giving the reasons for it  
 
 
 
 When you explain a new game to someone, do you tell them the rules/strategies and then the objective, or vice versa? Which sounds more logical to you: S1 or S2?  
+
+
 
 > S1. You need to develop a strategy, make decisions as to whether to collaborate or not with the other players, also keep an eye on the progress of the other players, and finally make the most money in order to win the game.  
 
