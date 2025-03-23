@@ -11,7 +11,7 @@ published: true
 showtoc: true 
 tags:
     - Self-improvement
-URL: "/2025/03/22/Academic_Leadership/"
+URL: "/2025/03/22/academic-Leadership/"
 categories: [ Notes ]
 password_protected: false
 password: "sj"
