@@ -1,0 +1,30 @@
+{
+  "name": "jingshan.github.io",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo",
+    "deploy": "hugo && node upload-algolia.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronnyshan/ronnyshan.github.io.git"
+  },
+  "keywords": [],
+
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ronnyshan/ronnyshan.github.io/issues"
+  },
+  "homepage": "https://github.com/ronnyshan/ronnyshan.github.io#readme",
+  "dependencies": {
+    "algoliasearch": "^5.35.0"
+  }
+}
+
+
+
