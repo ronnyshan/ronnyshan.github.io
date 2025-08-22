@@ -1,0 +1,39 @@
+{{ define "main" }}
+  <section class="search-page">
+    <h1>🔍 Search</h1>
+    <div id="search-box"></div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+  </section>
+
+  {{ partial "search-algolia.html" . }}
+
+  <style>
+    .search-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    #search-box {
+      margin-bottom: 1.5rem;
+    }
+    #hits .ais-Hits-item {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    #hits .ais-Hits-item a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+    }
+    #hits .ais-Hits-item a:hover {
+      text-decoration: underline;
+    }
+    #pagination {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+{{ end }}
+

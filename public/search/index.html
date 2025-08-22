@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Search" />
+    <meta property="og:title" content="Search" />
+    <meta property="twitter:title" content="Search" />
     
 
     
@@ -34,7 +34,7 @@
     <meta name="keyword"  content="单靖, Shan jing，Operations ResearchSupply Chain ManagementLogisticsTransport ModelingRevenue ManagementMultimodalityMultiobjective OptimizationNetwork DesignRailway SchedulingContainer ShippingModelingDigital StrategyMarketing Strategy">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Searches | 单靖 | Shan Jing</title>
+    <title>Search | 单靖 | Shan Jing</title>
 
     <link rel="canonical" href="/search/">
 
@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="/css/font-awesome.all.min.css">
 
     
-    
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
     
     <script src="/js/jquery.min.js"></script>
@@ -128,6 +128,8 @@
                     
                         <li><a href="/about//">ABOUT</a></li>
                     
+                        <li><a href="/search//">SEARCH</a></li>
+                    
 		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
 		           </li>
@@ -185,277 +187,95 @@
 
 
 
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-        
-            
+  <section class="search-page">
+    <h1>🔍 Search</h1>
+    <div id="search-box"></div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+  </section>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<div id="search-box"></div>
+<div id="hits"></div>
+<div id="pagination"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
-
-<div id="search-searchbar"></div>
- <div class="post-list" id="search-hits">
- </div>
-
 <script>
-const search = instantsearch({
-  appId: '',
-  indexName: '',
-  apiKey: ''
-});
+  const search = instantsearch({
+    appId: 'I9S3TMXSM0',
+    apiKey: '1311040cbafbc8ce05ba417d8d8b23d0',
+    indexName: 'blog',
+    searchParameters: { hitsPerPage: 10 }
+  });
 
-const hitTemplate = function(hit) {
+  
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-box',
+      placeholder: 'Search for articles...'
+    })
+  );
 
+  
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#hits',
+      templates: {
+        item: function(hit) {
+          return `
+            <div>
+              <a href="${hit.permalink}">
+                <strong>${hit._highlightResult?.title?.value || hit.title}</strong>
+              </a>
+            </div>
+          `;
+        }
+      }
+    })
+  );
 
-  let date = '';
-  if (hit.date) {
-    date = moment.unix(hit.date).format('MMM D, YYYY');
-  }
-  let url = `${hit.url}#${hit.anchor}`;
-  const title = hit._highlightResult.title.value;
+  
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination'
+    })
+  );
 
-  let breadcrumbs = '';
-  if (hit._highlightResult.headings) {
-    breadcrumbs = hit._highlightResult.headings.map(match => {
-      return `<span class="post-breadcrumb">${match.value}</span>`
-    }).join(' > ')
-  }
-
-  let content = "" ; 
-  if (hit._highlightResult.content){
-      content = hit._highlightResult.content.value;
-  }
-  else{
-      content = hit.summary;
-  }
-
-
-  return `
-    <div class="post-item">
-      <span class="post-meta">${date}</span>
-      <h2><a class="post-link" href="${url}">${title}</a></h2>
-      <a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>
-      <div class="post-snippet">${content}</div>
-    </div>
-  `;
-}
-
-
-search.addWidget(
-  instantsearch.widgets.searchBox({
-    container: '#search-searchbar',
-    placeholder: 'Search into posts...',
-    poweredBy: true 
-  })
-);
-
-search.addWidget(
-  instantsearch.widgets.hits({
-    container: '#search-hits',
-    templates: {
-      item: hitTemplate
-    }
-  })
-);
-
-search.start();
+  search.start();
 </script>
 
-<style>
-.ais-search-box {
-  max-width: 100%;
-  margin-bottom: 15px;
-}
-.post-item {
-  margin-bottom: 30px;
-}
-.post-link .ais-Highlight {
-  color: #111;
-  font-style: normal;
-  text-decoration: underline;
-}
-.post-breadcrumbs {
-  color: #424242;
-  display: block;
-}
-.post-breadcrumb {
-  font-size: 18px;
-  color: #424242;
-}
-.post-breadcrumb .ais-Highlight {
-  font-weight: bold;
-  font-style: normal;
-}
-.post-snippet .ais-Highlight {
-  color: #2a7ae2;
-  font-style: normal;
-  font-weight: bold;
-}
-.post-snippet img {
-  display: none;
-}
-</style>
-
-        
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            
-                
-            
-            <div class="youtube-live">
-                <iframe width="300" height="169" src="https://www.youtube.com/embed/jdoyIOZWh8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-            <div style="margin-top: 20px;"></div>
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:ronnyshan@gmail.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="/img/wechat_qrcode.jpg">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://www.linkedin.com/in/jingshang/">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-            
-            
-               
-               
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            
-            
-               
-            
-               
-                    <a href="/tags/culture" title="culture">
-                        culture
-                    </a>
-               
-            
-               
-                    <a href="/tags/eurasian-rail-freight" title="eurasian rail freight">
-                        eurasian rail freight
-                    </a>
-               
-            
-               
-            
-               
-                    <a href="/tags/leadship" title="leadship">
-                        leadship
-                    </a>
-               
-            
-               
-            
-               
-            
-               
-                    <a href="/tags/self-improvement" title="self-improvement">
-                        self-improvement
-                    </a>
-               
-            
-               
-            
-        </div>
-    </section>
-    
-
-     
-     
-   
-     <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>MY BOOK</h5>
-        <a href="https://item.jd.com/12528459.html" target="_blank">
-            <img src="/img/my_book.jpg" alt="My Book" style="margin-top: 20px; width: 200px; height: auto;">
-    </section>
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>PUBLICATIONS</h5>
-        <a href="https://scholar.google.com/citations?user=KHiMBlYAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <br>
-        <a href="https://www.researchgate.net/profile/Jing-Shan-6" target="_blank">ResearchGate</a>
-    </section>
-    
-     
 
 
-    
-</div>
-
-	</div>
-</div>
+  <style>
+    .search-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    #search-box {
+      margin-bottom: 1.5rem;
+    }
+    #hits .ais-Hits-item {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    #hits .ais-Hits-item a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+    }
+    #hits .ais-Hits-item a:hover {
+      text-decoration: underline;
+    }
+    #pagination {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
 
 
 

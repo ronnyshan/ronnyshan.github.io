@@ -1,4 +1,4 @@
-baseurl = "https://zhaohuabing.com"
+baseURL = "https://ronnyshan.github.io/"
 title = "Shan Jing"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
@@ -8,6 +8,9 @@ googleAnalytics = ""
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 hasCJKLanguage = true
+
+
+
 
 [outputs]
 home = ["HTML", "RSS", "Algolia"]
@@ -19,6 +22,12 @@ home = ["HTML", "RSS", "Algolia"]
   keyword = "单靖, Shan jing，Operations ResearchSupply Chain ManagementLogisticsTransport ModelingRevenue ManagementMultimodalityMultiobjective OptimizationNetwork DesignRailway SchedulingContainer ShippingModelingDigital StrategyMarketing Strategy"
   slogan = "You cannot have joy without pain, resilience without challenges, happiness without sadness, or bravery without fear."
   upstreamAttribution = true
+  custom_css = ["css/custom.css"]
+
+    # Algolia 搜索配置（必须写在 [params] 里）
+  algolia_appId = "I9S3TMXSM0"
+  algolia_indexName = "blog"
+  algolia_apiKey = "1311040cbafbc8ce05ba417d8d8b23d0"
 
   image_404 = "img/404-bg.jpg"
   title_404 = "你来到了没有知识的荒原 :("
@@ -29,11 +38,9 @@ home = ["HTML", "RSS", "Algolia"]
   leancloud_app_id = ""
   leancloud_app_key = ""
 
-  # algolia site search
-  algolia_search = true
-  algolia_appId = ""
-  algolia_indexName = ""
-  algolia_apiKey = ""
+
+
+
 
   # Sidebar settings
   sidebar_about_description = "Intercontinental Railway Transport, Global Supply Chain Management, Multimodality, Multiobjective Optimization, Network Design, Railway Scheduling and Policy making"
@@ -130,6 +137,12 @@ home = ["HTML", "RSS", "Algolia"]
 #  title =  "Pub"
 #  href =  "/Pub/"
 
+  [[params.addtional_menus]]
+  title = "SEARCH"
+  href = "/search/"
+
+
+
 
 [outputFormats.Algolia]
 baseName = "algolia"
@@ -141,9 +154,17 @@ notAlternative = true
 vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
 params = ["categories", "tags"] 
 
+
+
+
+
+
 [markup]
   [markup.tableOfContents]
-    endLevel = 2
     startLevel = 1
+    endLevel   = 2
   [markup.highlight]
     style = "dracula"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

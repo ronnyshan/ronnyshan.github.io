@@ -1,0 +1,54 @@
+<!-- shortcode: algolia -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<div id="search-box" style="margin:1rem 0;"></div>
+<div id="hits"></div>
+<div id="pagination" style="margin-top:1rem;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script>
+  (function () {
+    if (!window.instantsearch) return;
+
+    const search = instantsearch({
+      appId: '{{ .Site.Params.algolia_appId }}',
+      apiKey: '{{ .Site.Params.algolia_apiKey }}',
+      indexName: '{{ .Site.Params.algolia_indexName }}',
+      searchParameters: { hitsPerPage: 10 }
+    });
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#search-box',
+        placeholder: 'Search for articles...'
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits',
+        templates: {
+          item: function(hit) {
+            return `
+              <div class="ais-Hits-item">
+                <a href="${hit.permalink}">
+                  <strong>${(hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value) ? hit._highlightResult.title.value : hit.title}</strong>
+                </a>
+              </div>
+            `;
+          }
+        }
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#pagination'
+      })
+    );
+
+    search.start();
+  })();
+</script>
+

@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <!-- 首页大搜索框区域 -->
+  <section class="search-hero">
+    <div class="search-hero__inner">
+      {{ partial "search-algolia.html" . }}
+      <div class="algolia-brand">
+        Search by <a href="https://www.algolia.com" target="_blank" rel="noopener">Algolia</a>
+      </div>
+    </div>
+  </section>
+
+  {{ .Content }}  <!-- 继续渲染首页其它内容 -->
+{{ end }}
+
